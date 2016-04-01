@@ -46,4 +46,10 @@ public class Alumno
         return totalNotas/numNotas;
     }
     
+    /**
+     * Metodo que nos devolvera true si el alumnos ha aprobado
+     */
+    public boolean estaAprobado(){
+        return calculaMedia() >= NOTA_MINIMA;
+    }
 }
