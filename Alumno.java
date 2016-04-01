@@ -33,4 +33,17 @@ public class Alumno
     public void añadirNota(int nota){
         listaNotas.add(nota);
     }
+    
+    /**
+     * Metodo que calcula la media del alumno
+     */
+    public int calculaMedia(){
+        int totalNotas = 0;
+        int numNotas = listaNotas.size();
+        for(int i = 0; i < numNotas; i++){
+            totalNotas += listaNotas.get(i);
+        }
+        return totalNotas/numNotas;
+    }
+    
 }
