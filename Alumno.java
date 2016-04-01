@@ -27,5 +27,10 @@ public class Alumno
         listaNotas = new ArrayListInt();
     }
 
-    
+    /**
+     * Metodo que añadira una nota al alumno
+     */
+    public void añadirNota(int nota){
+        listaNotas.add(nota);
+    }
 }
