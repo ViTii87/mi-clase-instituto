@@ -7,27 +7,25 @@
  */
 public class Alumno
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private static final int NOTA_MINIMA = 5;
+    private static int numAlumnosClase = 0;
+    
+    private String nombre;
+    private int edad;
+    private int numClase;
+    private ArrayListInt listaNotas;
 
     /**
      * Constructor for objects of class Alumno
      */
-    public Alumno()
+    public Alumno(String nombre, int edad)
     {
-        // initialise instance variables
-        x = 0;
+        this.nombre = nombre;
+        this.edad = edad;
+        numClase = numAlumnosClase;
+        numAlumnosClase++;
+        listaNotas = new ArrayListInt();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    
 }
