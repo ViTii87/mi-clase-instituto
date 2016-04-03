@@ -70,6 +70,6 @@ public class Alumno
         else{
             System.out.printf("Ninguna");
         }
-        System.out.printf("\nNotaMedia: " + calculaMedia() + "\nAprobado: " + estaAprobado());
+        System.out.println("\nNotaMedia: " + calculaMedia() + "\nAprobado: " + estaAprobado() + "\n");
     }
 }
