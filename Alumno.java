@@ -8,7 +8,7 @@
 public class Alumno
 {
     private static final int NOTA_MINIMA = 5;
-    private static int numAlumnosClase = 0;
+    private static int numAlumnosClase = 1;
     
     private String nombre;
     private int edad;
@@ -37,13 +37,16 @@ public class Alumno
     /**
      * Metodo que calcula la media del alumno
      */
-    public int calculaMedia(){
+    public float calculaMedia(){
         int totalNotas = 0;
         int numNotas = listaNotas.size();
         for(int i = 0; i < numNotas; i++){
             totalNotas += listaNotas.get(i);
         }
-        return totalNotas/numNotas;
+        if(numNotas == 0){
+            numNotas = 1;
+        }
+        return (float)totalNotas/numNotas;
     }
     
     /**
@@ -51,5 +54,22 @@ public class Alumno
      */
     public boolean estaAprobado(){
         return calculaMedia() >= NOTA_MINIMA;
+    }
+    
+    /**
+     * Metodo que imprimira por pantalla los datos del alumno.
+     */
+    public void imprimeDatos(){
+        System.out.printf( "Nombre: " + nombre + "\nEdad: " + edad + "\nNumero de Clase: " + numClase 
+        + "\nNotas: ");
+        if(listaNotas.size() != 0){
+            for(int i = 0; i < listaNotas.size(); i++){
+                System.out.printf(listaNotas.get(i) + "  ");
+            }
+        }
+        else{
+            System.out.printf("Ninguna");
+        }
+        System.out.printf("\nNotaMedia: " + calculaMedia() + "\nAprobado: " + estaAprobado());
     }
 }
